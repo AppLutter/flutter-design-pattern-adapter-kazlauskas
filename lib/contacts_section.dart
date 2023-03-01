@@ -32,9 +32,13 @@ class _ContactsSectionState extends State<ContactsSection> {
         Text(widget.headerText),
         const SizedBox(height: 10),
         ...List.generate(
-        contacts.length,
-        (index) => ContentTile(contact: contacts[index]),
-      ),],
+          contacts.length,
+          (index) => ContentTile(
+            contact: contacts[index],
+            index: index,
+          ),
+        ),
+      ],
     );
   }
 }
