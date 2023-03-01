@@ -27,18 +27,25 @@ class _ContactsSectionState extends State<ContactsSection> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(widget.headerText),
-        const SizedBox(height: 10),
-        ...List.generate(
-          contacts.length,
-          (index) => ContentTile(
-            contact: contacts[index],
-            index: index,
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 10.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            widget.headerText,
+            style: const TextStyle(fontWeight: FontWeight.w700),
           ),
-        ),
-      ],
+          const SizedBox(height: 10),
+          ...List.generate(
+            contacts.length,
+            (index) => ContentTile(
+              contact: contacts[index],
+              index: index,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
